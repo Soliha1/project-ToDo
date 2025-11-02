@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Vazifani o‘chirish</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f6f6f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .box {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn-delete {
+            background-color: #ff4d4f;
+            color: white;
+        }
+        .btn-cancel {
+            background-color: #ccc;
+            color: #333;
+        }
+        .btn-delete:hover { background-color: #e43e3f; }
+        .btn-cancel:hover { background-color: #bfbfbf; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>"{{ task.title }}" vazifasi  o'chirilishini xoxlaysizmi?</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-delete">Ha, o‘chirish</button>
+            <a href="{% url 'home' %}" class="btn btn-cancel">Bekor qilish</a>
+        </form>
+    </div>
+</body>
+</html>
