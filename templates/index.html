@@ -10,10 +10,8 @@
         <div class="head">
             <h1>To-Do List</h1>
             <div style="display: flex; align-items: center;">
-                <h3>User</h3>
-                <a href="./login.html" style="text-decoration: none; color: red;">
-                Log out
-                </a>
+                <h3>{{request.user.username}}</h3>
+                <a href="{%url 'logout'%}" style="text-decoration: none; color: red;">Log out</a>
             </div>
       </div>
 
